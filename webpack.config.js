@@ -1,10 +1,6 @@
 const path = require('path'),
-			webpack = require('webpack'),
       HtmlWebpackPlugin = require('html-webpack-plugin'),
-      ExtractTextPlugin = require('extract-text-webpack-plugin'),
       ImageminPlugin = require('imagemin-webpack-plugin').default;
-
-const extractCSS = new ExtractTextPlugin('main.css');
 
 module.exports = {
 	entry: {
@@ -33,17 +29,25 @@ module.exports = {
       {
         test: /\.html$/,
         use: {
-          loader: 'html-loader?interpolate'
+          loader: 'html-loader',
+          options: {
+            interpolate: true
+          }
         }
       },
       {
         test: /\.css$/,
         include: path.join(__dirname, 'src/css'),
-        loader: ExtractTextPlugin.extract({
-          use: {
-            loader: 'css-loader'
-          }
-        })
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: '[name].[ext]'
+            }
+          },
+          'extract-loader',
+          'css-loader'
+        ]
       },
       {
         test: /\.(png|jpg|gif)$/,
@@ -61,7 +65,6 @@ module.exports = {
     ]
 	},
   plugins: [
-  	extractCSS,
     new HtmlWebpackPlugin({
       template: 'src/index.html'
     }),
