@@ -1,5 +1,5 @@
 export default function loadFullImages() {
-	let imageEls = Array.from(document.querySelectorAll('.hero-pic'));
+	let imageEls = [].slice.call(document.querySelectorAll('.hero-pic'));
 	imageEls.forEach((imageEl) => {
 		loadFullImage(imageEl);
 	});
