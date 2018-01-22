@@ -2,6 +2,7 @@
 	display: flex;
 	flex-flow: row wrap;
 }
+
 .hero-pic {
 	display: block;
 	flex-shrink: 0;
@@ -11,6 +12,7 @@
 	overflow: hidden;
 	margin: 5px;
 }
+
 .hero-preview {
 	width: 100%;
 	position: absolute;

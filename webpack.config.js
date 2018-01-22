@@ -37,7 +37,6 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        include: path.join(__dirname, 'src/css'),
         use: [
           {
             loader: 'file-loader',
@@ -46,19 +45,23 @@ module.exports = {
             }
           },
           'extract-loader',
-          'css-loader'
+          {
+            loader: 'css-loader',
+            options: {
+              minimize: true
+            }
+          }
         ]
       },
       {
         test: /\.(png|jpg|gif)$/,
-        include: path.join(__dirname, 'src/imgs'),
         use: {
           loader: 'responsive-loader',
           options: {
             sizes: [300],
             placeholder: true,
             placeholderSize: 50,
-            name: 'imgs/[name]-[hash].[ext]'
+            name: 'imgs/[name]-[width].[ext]'
           }
         }
       }

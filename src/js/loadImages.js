@@ -20,13 +20,14 @@ export default function loadFullImages() {
 
 	function phaseInImg(item, img) {
 		removePreviewFeatures(item);
-		item.appendChild(img)
-				.addEventListener('animationend', function phaseOutPreview(e) {
-					let previewImage = item.querySelector('.hero-preview');
-					item.removeChild(previewImage);
-					e.target.classList.remove('reveal');
-					e.target.removeEventListener('animationend', phaseOutPreview);
-				})
+		item
+			.appendChild(img)
+			.addEventListener('animationend', function phaseOutPreview(e) {
+				let previewImage = item.querySelector('.hero-preview');
+				item.removeChild(previewImage);
+				e.target.classList.remove('reveal');
+				e.target.removeEventListener('animationend', phaseOutPreview);
+			})
 	}
 
 	function removePreviewFeatures(item) {

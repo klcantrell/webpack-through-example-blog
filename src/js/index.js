@@ -3,4 +3,4 @@ import loadFullImages from './loadImages';
 
 window.addEventListener('load', function onWindowLoad() {
 	loadFullImages();
-})
+});
