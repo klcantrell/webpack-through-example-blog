@@ -1,8 +1,8 @@
 export default function loadFullImages() {
-	let imageEls = document.querySelectorAll('.hero-pic');
-	for (let imageEl of imageEls) {
+	let imageEls = Array.from(document.querySelectorAll('.hero-pic'));
+	imageEls.forEach((imageEl) => {
 		loadFullImage(imageEl);
-	}
+	});
 
 	function loadFullImage(item) {
 		const img = new Image();
