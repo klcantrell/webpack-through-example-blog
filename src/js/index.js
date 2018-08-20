@@ -1,6 +1,17 @@
-import mainStyles from '../css/main.css';
-import loadFullImages from './loadImages';
+import Router from './Router';
+import App from './App';
+import Home from './Home';
+import Hurray from './Hurray';
 
-window.addEventListener('load', function onWindowLoad() {
-	loadFullImages();
-})
+const app = App();
+
+Router
+  .on(() => {
+    app.render(Home);
+  })
+  .resolve();
+
+Router
+  .on('/hurray', () => {
+    app.render(Hurray);
+  });
