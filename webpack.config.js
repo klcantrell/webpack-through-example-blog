@@ -45,7 +45,7 @@ module.exports = {
 	      test: /\.css$/,
 	      exclude: /node_modules/,
 	      use: [
-					isDev ? 'style-loader' : MiniCssExtractPlugin.loader,
+					'style-loader',
 					'css-loader',
 				]
 	    },
@@ -77,8 +77,5 @@ module.exports = {
       template: 'src/index.html',
 		}),
 		new CleanWebpackPlugin(['public']),
-		new MiniCssExtractPlugin({
-      filename: "[name].css",
-    }),
   ]
 }
