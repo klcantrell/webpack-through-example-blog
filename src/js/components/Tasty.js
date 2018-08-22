@@ -1,4 +1,4 @@
-import Link from './Link';
+import Link from '../router/Link';
 import FancyAnimation from './FancyAnimation';
 
 const link = Link({target: '/', customText: 'Home'});

@@ -1,4 +1,4 @@
-import '../css/FancyAnimation.css';
+import './FancyAnimation.css';
 
 export default function FancyAnimation() {
   const shell = document.createElement('div');

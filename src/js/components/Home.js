@@ -1,4 +1,4 @@
-import Link from './Link';
+import Link from '../router/Link';
 
 const link = Link({target: 'tasty', customText: 'Ooh, please click me!'});
 

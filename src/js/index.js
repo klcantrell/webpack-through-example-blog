@@ -1,7 +1,7 @@
-import Router from './Router';
-import App from './App';
-import Home from './Home';
-import Tasty from './Tasty';
+import Router from './router/Router';
+import App from './components/App';
+import Home from './components/Home';
+import Tasty from './components/Tasty';
 
 const app = App();
 

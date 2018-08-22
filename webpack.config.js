@@ -76,6 +76,6 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: 'src/index.html',
 		}),
-		new CleanWebpackPlugin(['public']),
+		new CleanWebpackPlugin([path.join(__dirname, 'public')]),
   ]
 }
