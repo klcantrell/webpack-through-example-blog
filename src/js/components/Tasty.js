@@ -1,7 +1,5 @@
-import Link from '../router/Link';
 import FancyAnimation from './FancyAnimation';
 
-const link = Link({target: '/', customText: 'Home'});
 const fancyAnimation = FancyAnimation();
 
 export default function Tasty() {
@@ -9,12 +7,12 @@ export default function Tasty() {
   shell.innerHTML = `
     <div>
       <h2>Tasty!</h2>
-      ${link.markup}
+      <a href="/" data-navigo>Home</a>
       ${fancyAnimation.markup}
     </div>
   `;
   return {
-    node: link.bindNav(shell.firstElementChild),
+    node: shell.firstElementChild,
     markup: shell.innerHTML,
   };
 }

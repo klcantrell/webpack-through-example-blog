@@ -1,17 +1,14 @@
-import Link from '../router/Link';
-
-const link = Link({target: 'tasty', customText: 'Ooh, please click me!'});
-
 export default function Home() {
   const shell = document.createElement('div');
   shell.innerHTML = `
     <div>
       <h2>This is the home component!</h2>
-      ${link.markup}
+      <a href="tasty" data-navigo>Tasty</a>
     </div>
   `;
+  // each component has this base API returned
   return {
-    node: link.bindNav(shell.firstElementChild),
-    markup: shell.innerHTML,
+    node: shell.firstElementChild, // node is used by the render function of app to place the element on the page
+    markup: shell.innerHTML, // markup is used by other components to compose the HTML into a bigger component
   };
 }
