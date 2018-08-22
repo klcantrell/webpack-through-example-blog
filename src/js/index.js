@@ -1,24 +1,17 @@
 import Router from './Router';
 import App from './App';
-import LoadingSpinner from './LoadingSpinner';
+import Home from './Home';
+import Tasty from './Tasty';
 
 const app = App();
 
 Router
   .on(() => {
-    app.render(LoadingSpinner);
-    import('./Home')
-      .then(Home => {
-        app.render(Home.default);
-      });
+    app.render(Home);
   })
   .resolve();
 
 Router
   .on('/tasty', () => {
-    app.render(LoadingSpinner);
-    import('./Tasty')
-      .then(Tasty => {
-        app.render(Tasty.default);
-      });
+    app.render(Tasty);
   });
