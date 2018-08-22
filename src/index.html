@@ -11,7 +11,20 @@
     width: 90%;
     margin: 70px 5%;
     padding: 0;
-    font-family: "Futura", sans-serif;
+    font-family: "Futura", "Candara", sans-serif;
+  }
+  .loading-spinner {
+    margin: auto;
+    width: 64px;
+    height: 64px;
+    border: 4px rgba(0, 0, 0, .25) solid;
+    border-top: 4px rgba(186, 213, 234, 1) solid;
+    border-radius: 50%;
+    animation: spin .6s infinite linear;
+  }
+  @keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(359deg); }
   }
 </style>
 <body>

@@ -6,8 +6,7 @@ export default function App() {
       while(appEl.firstChild) {
         appEl.removeChild(appEl.firstChild);
       }
-
-      appEl.appendChild(component());
+      appEl.appendChild(component().node);
     }
   }
 }

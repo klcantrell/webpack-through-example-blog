@@ -1,13 +1,16 @@
 import Link from './Link';
+import FancyAnimation from './FancyAnimation';
 
-const link = Link({target: 'tasty', customText: 'Ooh, please click me!'});
+const link = Link({target: '/', customText: 'Home'});
+const fancyAnimation = FancyAnimation();
 
-export default function Home() {
+export default function Tasty() {
   const shell = document.createElement('div');
   shell.innerHTML = `
     <div>
-      <h2>This is the home component!</h2>
+      <h2>Tasty!</h2>
       ${link.markup}
+      ${fancyAnimation.markup}
     </div>
   `;
   return {
