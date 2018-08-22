@@ -53,23 +53,23 @@ module.exports = {
 	},
 	optimization: {
 		splitChunks: {
-			cacheGroups: {
-				default: false,
-				vendors: false,
-				vendor: {
-					name: 'vendor',
-					chunks: 'all',
-					test: /node_modules/,
-					enforce: true,
-				},
-				common: {
-					name: 'common',
-					minChunks: 2,
-					chunks: 'async',
-					reuseExistingChunk: true,
-					enforce: true
-				},
-			}
+			// cacheGroups: {
+			// 	default: false,
+			// 	vendors: false,
+			// 	vendor: {
+			// 		name: 'vendor',
+			// 		chunks: 'all',
+			// 		test: /node_modules/,
+			// 		enforce: true,
+			// 	},
+			// 	common: {
+			// 		name: 'common',
+			// 		minChunks: 2,
+			// 		chunks: 'async',
+			// 		reuseExistingChunk: true,
+			// 		enforce: true
+			// 	},
+			// }
 		}
 	},
   plugins: [

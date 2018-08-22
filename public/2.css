@@ -1,0 +1,35 @@
+.logo {
+  width: 500px;
+  margin: 0 auto;
+}
+
+#frosting {
+  -webkit-animation: frosting-opacity 2s infinite; /* Safari 4+ */
+  -webkit-transform-origin: 50% 50%;
+}
+
+#sprinkles path {
+  -webkit-animation: sprinkle-spin 1s infinite; /* Safari 4+ */
+  -webkit-transform-origin: 50% 50%;	
+}
+
+@-webkit-keyframes frosting-opacity {
+  0%, 100%   {
+    opacity: 0;
+    transform: rotate(0deg);
+  }
+  50% {
+    opacity: 1;
+    transform: rotate(360deg);
+  }
+}
+
+@-webkit-keyframes sprinkle-spin {
+  0%, 100%   {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(360deg);
+  }
+}
+
