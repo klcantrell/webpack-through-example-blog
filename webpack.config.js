@@ -9,7 +9,7 @@ module.exports = {
 	},
 	output: {
 		path: path.join(__dirname, 'public'),
-		filename: "[name].bundle.js"
+		filename: "[name].bundle.js",
 	},
 	node: {
 		Buffer: false,
@@ -29,11 +29,15 @@ module.exports = {
 	        options: {
 	          presets: [
 	            ['env', {
-	            	modules: false
-	            }]
+								// Babel can ignore import statements since webpack is taking care of it
+	            	modules: false,
+	            }],
 						],
-	        }
-	      }
+						plugins: [
+							'syntax-dynamic-import',
+						],
+	        },
+	      },
 	    },
 			{
 	      test: /\.css$/,
@@ -41,9 +45,9 @@ module.exports = {
 	      use: [
 					'style-loader',
 					'css-loader',
-				]
+				],
 	    },
-    ]
+    ],
 	},
   plugins: [
     new HtmlWebpackPlugin({
